@@ -10,30 +10,38 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
       href={`/categories/${category.slug}`}
-      className="group block bg-white border border-ink-100 rounded-2xl p-6 hover:border-sage-300 hover:shadow-md transition-all duration-300"
+      className="group block rounded-2xl p-6 transition-all duration-300"
+      style={{
+        background: "var(--color-surface)",
+        border: "1px solid var(--color-border-light)",
+      }}
     >
       <div className="flex items-start justify-between mb-4">
         <div
-          className="text-3xl w-14 h-14 flex items-center justify-center rounded-xl"
-          style={{ backgroundColor: `${category.color}15` }}
+          className="text-2xl w-12 h-12 flex items-center justify-center rounded-xl"
+          style={{ background: "var(--color-surface-2)" }}
         >
           {category.icon}
         </div>
         <ArrowRight
-          size={18}
-          className="text-ink-300 group-hover:text-sage-500 group-hover:translate-x-1 transition-all duration-200 mt-1"
+          size={16}
+          className="transition-all duration-200 group-hover:translate-x-1 mt-1"
+          style={{ color: "var(--color-ink-500)" }}
         />
       </div>
 
-      <h3 className="font-display font-semibold text-lg text-ink-950 mb-2 group-hover:text-sage-700 transition-colors">
+      <h3
+        className="font-display font-semibold text-base mb-2 transition-colors tracking-tight"
+        style={{ color: "var(--color-ink-50)" }}
+      >
         {category.name}
       </h3>
-      <p className="text-sm text-ink-500 leading-relaxed mb-4">
+      <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--color-ink-100)" }}>
         {category.description}
       </p>
 
-      <div className="flex items-center gap-1.5 text-xs text-ink-400">
-        <FileText size={13} />
+      <div className="flex items-center gap-1.5 text-xs" style={{ color: "var(--color-muted)" }}>
+        <FileText size={12} />
         <span>{category.articleCount ?? 0} artigos</span>
       </div>
     </Link>
