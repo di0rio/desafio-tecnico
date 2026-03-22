@@ -4,23 +4,18 @@ import Header from "../components/Header";
 
 export const metadata: Metadata = {
   title: "Base de Conhecimento",
-  description:
-    "Artigos e guias sobre Engenharia de Software, Arquitetura, Banco de Dados e DevOps.",
+  description: "Artigos e guias sobre Engenharia de Software, Arquitetura, Banco de Dados e DevOps.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-ink-100 py-8 mt-16">
+        <footer className="py-8 mt-16" style={{ borderTop: "1px solid var(--color-border-light)" }}>
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <p className="text-ink-400 text-sm font-body">
+            <p className="text-sm" style={{ color: "var(--color-muted)" }}>
               Base de Conhecimento — Construído com Next.js & TypeScript
             </p>
           </div>
