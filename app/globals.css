@@ -1,21 +1,7 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
-
-
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 :root {
@@ -49,6 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Rich text article content styles */
 .article-content h2 {
   font-family: "Playfair Display", Georgia, serif;
   font-size: 1.5rem;
@@ -96,7 +83,7 @@ body {
   font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
   font-size: 1.05rem;
-  color: var(--ink-700);
+  color: var(--ink-800);
   margin: 0;
 }
 
@@ -157,6 +144,7 @@ body {
   font-style: italic;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -173,15 +161,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--ink-400);
-}
-
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
