@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "../components/Header";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Base de Conhecimento",
@@ -10,7 +10,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen flex flex-col">
+      <body
+        className="min-h-screen flex flex-col"
+        style={{
+          backgroundColor: "#0d0d0f",
+          color: "#d8d8e8",
+        }}
+      >
         <Header />
         <main className="flex-1">{children}</main>
         <footer className="py-8 mt-16" style={{ borderTop: "1px solid var(--color-border-light)" }}>
