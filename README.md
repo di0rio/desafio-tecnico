@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 Base de Conhecimento
 
-## Getting Started
+Uma base de conhecimento moderna construída com **Next.js 15**, **TypeScript** e **Tailwind CSS**.
 
-First, run the development server:
+## ✨ Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **4 categorias** e **16 artigos** com conteúdo rico
+- **Renderização server-side** em todos os níveis (Server Components + Route Handlers)
+- **Busca** de artigos por título, conteúdo e tags — processada no backend
+- **Rich text** com suporte a código, blockquotes, tabelas e listas
+- **Breadcrumbs** em todas as páginas internas
+- **Estados de carregamento** com skeletons animados
+- **Estado vazio** para buscas sem resultado
+- **Layout responsivo** mobile-first
+- **App Router** do Next.js 15
+
+## 🗂️ Estrutura de Pastas
+
+```
+knowledge-base/
+├── app/
+│   ├── api/
+│   │   ├── articles/
+│   │   │   ├── route.ts          # GET /api/articles
+│   │   │   └── [id]/route.ts     # GET /api/articles/:id
+│   │   ├── categories/
+│   │   │   ├── route.ts          # GET /api/categories
+│   │   │   └── [id]/route.ts     # GET /api/categories/:id
+│   │   └── search/
+│   │       └── route.ts          # GET /api/search?q=...
+│   ├── articles/
+│   │   ├── page.tsx              # Listagem de todos os artigos
+│   │   ├── loading.tsx
+│   │   └── [slug]/
+│   │       ├── page.tsx          # Leitura do artigo
+│   │       └── loading.tsx
+│   ├── categories/
+│   │   ├── page.tsx              # Listagem de categorias
+│   │   ├── loading.tsx
+│   │   └── [slug]/
+│   │       └── page.tsx          # Artigos da categoria
+│   ├── search/
+│   │   └── page.tsx              # Busca de artigos
+│   ├── layout.tsx
+│   ├── page.tsx                  # Home
+│   ├── not-found.tsx
+│   └── globals.css
+├── components/
+│   ├── Header.tsx
+│   ├── Breadcrumbs.tsx
+│   ├── CategoryCard.tsx
+│   ├── ArticleCard.tsx
+│   ├── SearchForm.tsx
+│   ├── EmptyState.tsx
+│   └── Skeletons.tsx
+├── data/
+│   └── mock.ts                   # Dados mockados (4 cats, 16 artigos)
+├── lib/
+│   └── api.ts                    # Funções fetch para Server Components
+├── types/
+│   └── index.ts                  # Tipos TypeScript
+└── ...config files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Como Rodar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# 1. Instalar dependências
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 2. Rodar em desenvolvimento
+npm run dev
 
-## Learn More
+# 3. Acessar
+open http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🛣️ Rotas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Rota                 | Descrição                                |
+| -------------------- | ---------------------------------------- |
+| `/`                  | Home com categorias e artigos recentes   |
+| `/categories`        | Lista todas as categorias                |
+| `/categories/[slug]` | Artigos de uma categoria                 |
+| `/articles`          | Todos os artigos agrupados por categoria |
+| `/articles/[slug]`   | Leitura completa do artigo               |
+| `/search?q=termo`    | Busca de artigos                         |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔌 API Routes
 
-## Deploy on Vercel
+| Endpoint                  | Descrição                                         |
+| ------------------------- | ------------------------------------------------- |
+| `GET /api/categories`     | Lista todas as categorias com contagem de artigos |
+| `GET /api/categories/:id` | Categoria com seus artigos                        |
+| `GET /api/articles`       | Lista todos os artigos (sem conteúdo)             |
+| `GET /api/articles/:id`   | Artigo completo com conteúdo                      |
+| `GET /api/search?q=termo` | Busca por título, conteúdo e tags                 |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Next.js 15** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Lucide React** (ícones)
+- **Google Fonts** (Playfair Display + DM Sans + JetBrains Mono)

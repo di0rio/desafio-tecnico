@@ -36,11 +36,17 @@ export default function CategoryCard({ category }: CategoryCardProps) {
       >
         {category.name}
       </h3>
-      <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--color-ink-100)" }}>
+      <p
+        className="text-sm leading-relaxed mb-4"
+        style={{ color: "var(--color-ink-100)" }}
+      >
         {category.description}
       </p>
 
-      <div className="flex items-center gap-1.5 text-xs" style={{ color: "var(--color-muted)" }}>
+      <div
+        className="flex items-center gap-1.5 text-xs"
+        style={{ color: "var(--color-muted)" }}
+      >
         <FileText size={12} />
         <span>{category.articleCount ?? 0} artigos</span>
       </div>
