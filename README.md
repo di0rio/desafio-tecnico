@@ -12,7 +12,7 @@ Uma base de conhecimento moderna construída com **Next.js 15**, **TypeScript** 
 - **Estados de carregamento** com skeletons animados
 - **Estado vazio** para buscas sem resultado
 - **Layout responsivo** mobile-first
-- **App Router** do Next.js 15
+- **App Router** do Next.js 16
 
 ## 🗂️ Estrutura de Pastas
 
