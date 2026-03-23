@@ -1,6 +1,10 @@
 # 📚 Base de Conhecimento
 
-Uma base de conhecimento moderna construída com **Next.js 15**, **TypeScript** e **Tailwind CSS**.
+Uma base de conhecimento moderna construída com **Next.js 16**, **TypeScript** e **Tailwind CSS**.
+
+##  Deploy na Vercel
+
+https://desafio-tecnico-nc7w0sxfm-di0rios-projects.vercel.app/
 
 ## ✨ Funcionalidades
 
