@@ -98,8 +98,7 @@ open http://localhost:3000
 
 ## 🎨 Stack
 
-- **Next.js 15** (App Router)
+- **Next.js 16** (App Router)
 - **TypeScript**
 - **Tailwind CSS**
 - **Lucide React** (ícones)
-- **Google Fonts** (Playfair Display + DM Sans + JetBrains Mono)
